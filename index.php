@@ -26,13 +26,13 @@
     .bgimg {
       background-position: center;
       background-size: cover;
-      background-image: url("image.jpg"); /* Corrected background image declaration */
+      background-image: url("image.jpg"); 
       min-height: 75%;
         }
 
     .new-button {
       position: absolute;
-      top: 70%; /* Adjust the top position as needed */
+      top: 70%; 
       left: 50%;
       transform: translateX(-50%);
     }
@@ -68,9 +68,10 @@
 <div class = "container">
   <img src="bkgrd1.jpg" alt="Home Page Image" height = "940" width = "100%">
   <div class = "center">
-    <img src="circle-avatar.png" alt="circle-avatar" height = "200"><br><br>
-    <button class = "w3-button w3-round-large w3-black">Github</button>
-    <button class = "w3-button w3-round-large w3-black">Linked In</button>
+    <!-- <img src="circle-avatar.png" alt="circle-avatar" height = "200"><br><br>\ -->
+    <h1 class = "w3-text-black"><b>Jacob Craven Portfolio Website</b></h1>
+    <a class="w3-button w3-round-large w3-black" href="https://www.github.com/jacobtcraven" target="_blank">Github</a>
+    <a class="w3-button w3-round-large w3-black" href="https://www.linkedin.com/in/jacob-craven-1905b71b9?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3BK7%2BX%2FpsTQJKF49QmUdSTMw%3D%3D" target="_blank">LinkedIn</a>
 </div>
 </div>
 <!-- </div> -->
@@ -90,9 +91,9 @@
     
       <div class="w3-white w3-text-grey w3-card-4">
         <div class="w3-display-container">
-          <img src="sample-avatar.jpg" style="width:100%" alt="Avatar">
+          <img src="PPic.jpg" style="width:100%" alt="Avatar">
           <div class="w3-display-bottomleft w3-container w3-text-black">
-            <h2>Jacob Craven</h2>
+            <h2 class = "w3-text-white">Jacob Craven</h2>
           </div>
         </div>
         <div class="w3-container">
