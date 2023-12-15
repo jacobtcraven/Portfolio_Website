@@ -209,7 +209,7 @@
     </div>
     <br>
     <p>Send Me A Message:</p>
-    <form action="/action_page.php" target="_blank" class = "w3-text-black">
+    <form action="message.php" method = "post" class = "w3-text-black">
       <p><input class="w3-input w3-padding-16 w3-border" type="text" placeholder="Name" required name="Name"></p>
       <p><input class="w3-input w3-padding-16 w3-border" type="text" placeholder="Email" required name="Email"></p>
       <p><input class="w3-input w3-padding-16 w3-border" type="text" placeholder="Subject" required name="Subject"></p>
