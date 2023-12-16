@@ -177,7 +177,7 @@
   <img src="pwebsitepic.png" alt="Spell Check" height = "200">
   <div class="w3-container w3-center">
     <h3>Portfolio Website</h3>
-    <a class="w3-button w3-large w3-black" href="https://www.github.com/jacobtcraven" target="_blank">View Code On Github</a>
+    <a class="w3-button w3-large w3-black" href="https://github.com/jacobtcraven/Portfolio_Website" target="_blank">View Code On Github</a>
   </div>
 </div>
 </div>
