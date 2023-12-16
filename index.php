@@ -82,7 +82,7 @@
 
 <!-- Page Container -->
 <div class="w3-content w3-margin-top" style="max-width:1400px;">
-
+ 
   <!-- The Grid -->
   <div class="w3-row-padding">
   
@@ -99,7 +99,6 @@
         <div class="w3-container">
           <p><i class="fa fa-envelope fa-fw w3-margin-right w3-large w3-text-teal"></i>jcraven@siue.com</p>
           <hr>
-          <br>
 
           <p class="w3-large w3-text-theme"><b><i class="fa fa-globe fa-fw w3-margin-right w3-text-teal"></i>Languages</b></p>
           <p>C++</p>
@@ -175,9 +174,10 @@
 <div class="w3-row-padding">
 <div class = "w3-half">
 <div class="w3-card-4 w3-round-large w3-margin w3-padding-16">
-  <img src="spell-check2.png" alt="Spell Check" height = "200">
+  <img src="pwebsitepic.png" alt="Spell Check" height = "200">
   <div class="w3-container w3-center">
-    <h3>Spell Check</h3>
+    <h3>Portfolio Website</h3>
+    <a class="w3-button w3-large w3-black" href="https://www.github.com/jacobtcraven" target="_blank">View Code On Github</a>
   </div>
 </div>
 </div>
@@ -187,9 +187,24 @@
   <div class="w3-container w3-center">
     <h3>Login Validation</h3>
   </div>
+  <a class="w3-button w3-large w3-black" href="https://www.github.com/jacobtcraven" target="_blank">View Code On Github</a>
 </div>
 </div>
 </div>
+
+<div class="w3-row-padding">
+<div class = "w3-half">
+<div class="w3-card-4 w3-round-large w3-margin w3-padding-16">
+  <img src="spell-check2.png" alt="Spell Check" height = "200">
+  <div class="w3-container w3-center">
+    <h3>Spell Check</h3>
+  </div>
+  <a class="w3-button w3-large w3-black" href="https://www.github.com/jacobtcraven" target="_blank">View Code On Github</a>
+</div>
+</div>
+
+</div>
+
 </div>
 </div>
 <div class ="w3-margin">
