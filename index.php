@@ -6,8 +6,9 @@
     <title>Jacob Craven</title>
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Roboto'>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> -->
     <script src="https://kit.fontawesome.com/72fe1b6e4f.js" crossorigin="anonymous"></script>
+    <link rel="icon" type="image/x-icon" href="favicon.png">
   </head>
 <style>
     /* body {
@@ -53,14 +54,18 @@
 <div class="w3-top">
   <div class="w3-row w3-padding w3-black">
 
-    <div class="w3-col" style = "width:33%">
-      <a href="#about" class="w3-button w3-block w3-black">ABOUT</a>
+    <div class="w3-col" style = "width:25%">
+      <a href="#about" class="w3-button w3-block w3-black"><i class="fa-solid fa-user"></i> ABOUT</a>
     </div>
-    <div class="w3-col s2" style = "width:33%">
-      <a href="#projects" class="w3-button w3-block w3-black">PROJECTS</a>
+    <div class="w3-col s2" style = "width:25%">
+      <a href="#projects" class="w3-button w3-block w3-black"><i class="fa-solid fa-diagram-project"></i> PROJECTS</a>
     </div>
-    <div class="w3-col s2" style = "width:33%">
-      <a href="#contact" class="w3-button w3-block w3-black">CONTACT</a>
+    <div class="w3-col s2" style = "width:25%">
+      <a href="#contact" class="w3-button w3-block w3-black"><i class="fa-solid fa-address-book"></i> CONTACT</a>
+    </div>
+    <div class="w3-col s2" style = "width:25%">
+      
+      <a href="https://1drv.ms/b/s!AkQG8SYbBSQ7gqMI9HziRJD16S9L9g?e=9x20KA" target ="_blank" class="w3-button w3-block w3-black"><i class="fa-solid fa-file-import"></i> RÉSUMÉ</a>
     </div>
   </div>
 </div>
@@ -70,8 +75,14 @@
   <div class = "center">
     <!-- <img src="circle-avatar.png" alt="circle-avatar" height = "200"><br><br>\ -->
     <h1 class = "w3-text-black"><b>Jacob Craven Portfolio Website</b></h1>
-    <a class="w3-button w3-round-large w3-black" href="https://www.github.com/jacobtcraven" target="_blank">Github</a>
-    <a class="w3-button w3-round-large w3-black" href="https://www.linkedin.com/in/jacob-craven-1905b71b9?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3BK7%2BX%2FpsTQJKF49QmUdSTMw%3D%3D" target="_blank">LinkedIn</a>
+    <a class="w3-button w3-round-large w3-black" href="https://www.github.com/jacobtcraven" target="_blank"><i class="fa-brands fa-github"></i> Github</a>
+    <a class="w3-button w3-round-large w3-black" href="https://www.linkedin.com/in/jacob-craven-1905b71b9?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3BK7%2BX%2FpsTQJKF49QmUdSTMw%3D%3D" 
+    target="_blank"><i class="fa-brands fa-linkedin"></i> LinkedIn</a>
+    <br>
+    <div class = "w3-padding">
+      <a class="w3-button w3-round-large w3-black" href="https://1drv.ms/b/s!AkQG8SYbBSQ7gqMI9HziRJD16S9L9g?e=9x20KA" 
+      target="_blank"><i class="fa-solid fa-file-import"></i> Résumé</a>
+    </div>
 </div>
 </div>
 <!-- </div> -->
@@ -177,8 +188,8 @@
   <img src="pwebsitepic.png" alt="Spell Check" height = "200">
   <div class="w3-container w3-center">
     <h3>Portfolio Website</h3>
-    <a class="w3-button w3-large w3-black" href="https://github.com/jacobtcraven/Portfolio_Website" target="_blank">View Code On Github</a>
   </div>
+  <a class="w3-button w3-large w3-black" href="https://github.com/jacobtcraven/Portfolio_Website" target="_blank"><i class="fa-brands fa-github"></i> Github</a>
 </div>
 </div>
 <div class = "w3-half">
@@ -187,7 +198,8 @@
   <div class="w3-container w3-center">
     <h3>Login Validation</h3>
   </div>
-  <a class="w3-button w3-large w3-black" href="https://www.github.com/jacobtcraven" target="_blank">View Code On Github</a>
+  <a class="w3-button w3-large w3-black" href="Projects/LoginValidation/index.php" target="_blank"><i class="fa-solid fa-desktop"></i> Demo</a>
+  <a class="w3-button w3-large w3-black" href="https://www.github.com/jacobtcraven" target="_blank"><i class="fa-brands fa-github"></i> Github</a>
 </div>
 </div>
 </div>
@@ -199,7 +211,8 @@
   <div class="w3-container w3-center">
     <h3>Spell Check</h3>
   </div>
-  <a class="w3-button w3-large w3-black" href="https://www.github.com/jacobtcraven" target="_blank">View Code On Github</a>
+  <a class="w3-button w3-large w3-black" href="Projects/SpellCheck/index.php" target="_blank"><i class="fa-solid fa-desktop"></i> Demo</a>
+  <a class="w3-button w3-large w3-black" href="https://www.github.com/jacobtcraven" target="_blank"><i class="fa-brands fa-github"></i> Github</a>
 </div>
 </div>
 

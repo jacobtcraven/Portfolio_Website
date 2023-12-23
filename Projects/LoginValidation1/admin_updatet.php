@@ -15,11 +15,11 @@ if($_SESSION['status'] != 'valid'){
 }
 
 if($_SERVER["REQUEST_METHOD"]=="POST"){
-    $usport=$_POST['usport'];
+    $uteam=$_POST['uteam'];
 
-    $dsn='mysql:host=localhost;dbname=my_db';
-    $username_db="root";
-    $password_db="root";
+    $dsn='mysql:host=sql313.infinityfree.com;dbname=if0_35447805_db_login';
+    $username_db="if0_35447805";
+    $password_db="6DSETUWO9wv";
 
     try{
         $pdo= new PDO($dsn,$username_db,$password_db);
@@ -31,7 +31,7 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
 
 $username = $_SESSION["update"];
 
-$sql="SELECT id FROM pass_table WHERE username=?";
+$sql="SELECT id FROM registration WHERE username=?";
 $statement=$pdo->prepare($sql);
 $statement->execute([$username]);
 
@@ -39,30 +39,28 @@ $id_fetch=$statement->fetch();
 
 $id = $id_fetch[0];
 
-$sql="SELECT sport FROM sports_table WHERE id=?";
+
+$sql="SELECT team FROM sports_table WHERE id=?";
 $statement=$pdo->prepare($sql);
 $statement->execute([$id]);
 
 $info=$statement->fetch();
 
-echo "before";
 
 if($info){
-    echo "right";
-    $sql = "UPDATE sports_table SET sport = :nsport WHERE id = :id";
+    $sql = "UPDATE sports_table SET team = :nsport WHERE id = :id";
     $statement = $pdo->prepare($sql);
-    $statement->bindParam(':nsport', $usport);
+    $statement->bindParam(':nsport', $uteam);
     $statement->bindParam(':id', $id);
     $statement->execute();
 }else {
-    echo "wrong";
-    $team = "No Answer Given";
+    $sport = "No Answer Given";
     $sql="INSERT INTO sports_table(id,sport,team) VALUES(:id,:sport,:team)";
     $statement=$pdo->prepare($sql);
 
     $statement->bindParam(':id',$id);
-    $statement->bindParam(':sport',$usport);
-    $statement->bindParam(':team',$team);
+    $statement->bindParam(':sport',$sport);
+    $statement->bindParam(':team',$uteam);
 
     $statement->execute();
 

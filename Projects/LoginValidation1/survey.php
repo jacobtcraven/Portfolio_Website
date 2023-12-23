@@ -11,9 +11,9 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
     $character=$_POST['character'];
 
 
-$dsn='mysql:host=localhost;dbname=my_db';
-$username_db="root";
-$password_db="root";
+    $dsn='mysql:host=sql313.infinityfree.com;dbname=if0_35447805_db_login';
+    $username_db="if0_35447805";
+    $password_db="6DSETUWO9wv";
 
 try{
     $pdo= new PDO($dsn,$username_db,$password_db);
@@ -25,8 +25,8 @@ $sql="CREATE TABLE IF NOT EXISTS sports_table (
     sport VARCHAR(255) NOT NULL,
     team VARCHAR(255) NOT NULL,
     id INT(7) NOT NULL,
-    FOREIGN KEY(id) REFERENCES pass_table(id)
-)";
+    FOREIGN KEY(id) REFERENCES registration(id)
+)"; 
 
 $stmt=$pdo->prepare($sql);
 
@@ -40,7 +40,7 @@ $sql="CREATE TABLE IF NOT EXISTS movie_table (
     movie VARCHAR(255) NOT NULL,
     main_character VARCHAR(255) NOT NULL,
     id INT(7) NOT NULL,
-    FOREIGN KEY(id) REFERENCES pass_table(id)
+    FOREIGN KEY(id) REFERENCES registration(id)
 )";
 
 $stmt=$pdo->prepare($sql);
@@ -94,11 +94,11 @@ if($id_exist){
 
     $statement->execute();
 
-    $sql = 'SELECT pass_table.username, sports_table.sport, sports_table.team, movie_table.movie, movie_table.main_character FROM pass_table 
-    JOIN sports_table ON pass_table.id = sports_table.id
-    JOIN movie_table ON pass_table.id = movie_table.id';
+    $sql = 'SELECT registration.username, sports_table.sport, sports_table.team, movie_table.movie, movie_table.main_character FROM registration 
+    JOIN sports_table ON registration.id = sports_table.id
+    JOIN movie_table ON registration.id = movie_table.id';
 
-    $statement = $pdo->prepare($sql);
+    $statement = $pdo->prepare($sql); 
     $statement->execute();
 
     header("Location: survey_thanks.php");

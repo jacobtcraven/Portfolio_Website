@@ -7,6 +7,10 @@
     <title>Admin Page</title>
     <link rel='stylesheet' href='https://www.w3schools.com/w3css/4/w3.css'>
 </head>
+<style>
+h1,h2,h3,h4,h5,h6 {font-family: "Oswald"}
+body {font-family: "Open Sans"}
+</style>
 <?php
 session_start();
 if($_SESSION['status'] != 'valid'){
@@ -17,7 +21,7 @@ if($_SESSION['status'] != 'valid'){
 function view_user($username){
     global $pdo;
 
-    $sql="SELECT id FROM pass_table WHERE username=?";
+    $sql="SELECT id FROM registration WHERE username=?";
     $statement=$pdo->prepare($sql);
     $statement->execute([$username]);
 
@@ -75,17 +79,17 @@ function view_user($username){
 
 
 
-    echo "Username: ". $username . "<br>";
-    echo "Favorite Sport: ". $sport ."<br>";
-    echo "Favorite Team: ". $team ."<br>";
-    echo "Favorite Movie: ". $movie ."<br>";
-    echo "Main Character In Favorite Movie: ". $char ."<br>";
+    echo "<h3>Username: ". $username . "</h3>";
+    echo "<h3>Favorite Sport: ". $sport ."</h3>";
+    echo "<h3>Favorite Team: ". $team ."</h3>";
+    echo "<h3>Favorite Movie: ". $movie ."</h3>";
+    echo "<h3>Main Character In Favorite Movie: ". $char ."</h3>";
 }
 
 function user_exist($username){
     global $pdo;
 
-    $sql="SELECT password FROM pass_table WHERE username=?";
+    $sql="SELECT password FROM registration WHERE username=?";
     $statement=$pdo->prepare($sql);
     $statement->execute([$username]);
 
@@ -97,19 +101,47 @@ function user_exist($username){
         return false;
     }
 }
+
+function delete_user($username){
+    global $pdo;
+
+    $sql="SELECT id FROM registration WHERE username=?";
+    $statement=$pdo->prepare($sql);
+    $statement->execute([$username]);
+
+    $id_fetch=$statement->fetch();
+
+    $id = $id_fetch[0];
+
+    $sql="DELETE FROM sports_table WHERE id=?";
+    $statement=$pdo->prepare($sql);
+    $statement->execute([$id]);
+
+    $sql="DELETE FROM movie_table WHERE id=?";
+    $statement=$pdo->prepare($sql);
+    $statement->execute([$id]);
+
+    $sql="DELETE FROM registration WHERE username=?";
+    $statement=$pdo->prepare($sql);
+    $statement->execute([$username]);
+}
 ?>
 
-<body>
-   <h1>ADMIN PAGE</h1>
+<body class="w3-blue-gray w3-center">
+<header class="w3-container w3-center w3-padding-48">
+    <h1 class="w3-xxxlarge"><b>ADMIN PAGE</b></h1>
+    <h6>Created by <span class="w3-tag">Jacob Craven</span></h6>
+</header> 
+<div class="w3-container w3-white w3-margin w3-padding-large w3-round-large">
 
-    <h3>ADMIN CONTROL</h3>
+
     <?php
     if($_SERVER["REQUEST_METHOD"]=="POST"){
-        $username=$_POST['vusername'];
+        $username=$_POST['dusername'];
 
-        $dsn='mysql:host=localhost;dbname=my_db';
-        $username_db="root";
-        $password_db="root";
+        $dsn='mysql:host=sql313.infinityfree.com;dbname=if0_35447805_db_login';
+        $username_db="if0_35447805";
+        $password_db="6DSETUWO9wv";
 
         try{
             $pdo= new PDO($dsn,$username_db,$password_db);
@@ -124,17 +156,16 @@ function user_exist($username){
     if($user_exist_bool){
         view_user($username);
     }else{
-        $username = $_SESSION['update'];
-        $ue2 = user_exist($username);
-        if($ue2){
-            view_user($username);
-        }else{
-            echo"user doesnt exist";
-        }
+        echo"<h3>User Doesnt Exist</h3>";
     }
 
+    delete_user($username);
+
+    if($user_exist_bool){
+        echo "<br><h3>User And User's Survey Answers Have Been Removed</h3>";
+    }
     ?>
-    <br>
+    </div>
     <a href="admin.php" style ="color : blue">Previous Page<a>
     <br>
     <br>

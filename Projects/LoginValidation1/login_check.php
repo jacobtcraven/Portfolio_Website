@@ -1,23 +1,20 @@
 <?php
 session_start();
-if($_SESSION['status'] != 'valid'){
-    header("Location:index.php");
-    exit();
-}
 if($_SERVER["REQUEST_METHOD"]=="POST"){
     $username=$_POST['username'];
     $password=$_POST['password'];
 
     if($username== 'admin' && $password == 'admin'){
-        header('Location: admin.php');
         $_SESSION['status'] = 'valid';
+        $_SESSION['username'] = $username;
+        header('Location: admin.php');
         exit();
     }
 
 
-    $dsn='mysql:host=localhost;dbname=my_db';
-$username_db="root";
-$password_db="root";
+$dsn='mysql:host=sql313.infinityfree.com;dbname=if0_35447805_db_login';
+$username_db="if0_35447805";
+$password_db="6DSETUWO9wv";
 
 try{
     $pdo= new PDO($dsn,$username_db,$password_db);
@@ -25,7 +22,7 @@ try{
     die("connection error".$e->getMessage());
 }
 
-$sql="CREATE TABLE IF NOT EXISTS pass_table (
+$sql="CREATE TABLE IF NOT EXISTS registration (
     id INT(7) NOT NULL AUTO_INCREMENT,
     username VARCHAR(100) NOT NULL,
     password VARCHAR(100) NOT NULL,
@@ -44,7 +41,7 @@ if ($stmt->execute()){
 function user_exist($username,$password){
     global $pdo;
 
-    $sql="SELECT password FROM pass_table WHERE username=?";
+    $sql="SELECT password FROM registration WHERE username=?";
     $statement=$pdo->prepare($sql);
     $statement->execute([$username]);
 
@@ -64,7 +61,7 @@ function user_exist($username,$password){
 
 $user_exist_bool=user_exist($username,$password);
 
-$sql="SELECT id FROM pass_table WHERE username=?";
+$sql="SELECT id FROM registration WHERE username=?";
 $statement=$pdo->prepare($sql);
 $statement->execute([$username]);
 

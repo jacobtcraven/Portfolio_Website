@@ -1,17 +1,13 @@
 <?php
 session_start();
-if($_SESSION['status'] != 'valid'){
-    header("Location:index.php");
-    exit();
-}
 if($_SERVER["REQUEST_METHOD"]=="POST"){
     $username=$_POST['username'];
     $password=$_POST['password'];
 
 
-$dsn='mysql:host=localhost;dbname=my_db';
-$username_db="root";
-$password_db="root";
+    $dsn='mysql:host=sql313.infinityfree.com;dbname=if0_35447805_db_login';
+    $username_db="if0_35447805";
+    $password_db="6DSETUWO9wv";
 
 try{
     $pdo= new PDO($dsn,$username_db,$password_db);
@@ -19,7 +15,7 @@ try{
     die("connection error".$e->getMessage());
 }
 
-$sql="CREATE TABLE IF NOT EXISTS pass_table (
+$sql="CREATE TABLE IF NOT EXISTS registration (
     id INT(7) NOT NULL AUTO_INCREMENT,
     username VARCHAR(100) NOT NULL,
     password VARCHAR(100) NOT NULL,
@@ -38,7 +34,7 @@ if ($stmt->execute()){
 function user_exist($username,$password){
     global $pdo;
 
-    $sql="SELECT password FROM pass_table WHERE username=?";
+    $sql="SELECT password FROM registration WHERE username=?";
     $statement=$pdo->prepare($sql);
     $statement->execute([$username]);
 
@@ -57,7 +53,7 @@ if($user_exist_bool){
     header("Location: incorrect_create.php");
     exit();
 }else{
-    $sql="INSERT INTO pass_table(username,password) VALUES(:username,:password)";
+    $sql="INSERT INTO registration(username,password) VALUES(:username,:password)";
     $statement=$pdo->prepare($sql);
     
     $hashedPassword=password_hash($password,PASSWORD_BCRYPT);

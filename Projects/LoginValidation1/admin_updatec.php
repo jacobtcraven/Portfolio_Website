@@ -17,9 +17,9 @@ if($_SESSION['status'] != 'valid'){
 if($_SERVER["REQUEST_METHOD"]=="POST"){
     $uchar=$_POST['uchar'];
 
-    $dsn='mysql:host=localhost;dbname=my_db';
-    $username_db="root";
-    $password_db="root";
+    $dsn='mysql:host=sql313.infinityfree.com;dbname=if0_35447805_db_login';
+    $username_db="if0_35447805";
+    $password_db="6DSETUWO9wv";
 
     try{
         $pdo= new PDO($dsn,$username_db,$password_db);
@@ -31,7 +31,7 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
 
 $username = $_SESSION["update"];
 
-$sql="SELECT id FROM pass_table WHERE username=?";
+$sql="SELECT id FROM registration WHERE username=?";
 $statement=$pdo->prepare($sql);
 $statement->execute([$username]);
 
